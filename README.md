@@ -1,7 +1,8 @@
 # ubuntu-xam-tools
 Scripts to build what is effectively the equivalent of the delightful and beautiful Xamarin Studio
 on Ubuntu.  It is designed to be continuously updated and applied as new versions of MonoDevelop
-and Mono.
+and Mono are released.  Check the release immediately below to see if a new version is available
+for update.
 
 Current Versions:
 -----------------
