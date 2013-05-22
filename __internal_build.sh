@@ -6,7 +6,7 @@ sudo apt-get -q -y install build-essential autoconf libtool mono-gmcs libglib2.0
 XS_VERSION=4.0.5
 XS_TAG=monodevelop-4.0.5
 MONO_VERSION=3.0.10
-MONO_TAG=mono-3.10
+MONO_TAG=mono-3.0.10
 GTK_SHARP_TAG=gtk-sharp-2-12-branch
 GNOME_SHARP_TAG=master
 FSHARP_TAG=3.0.27
