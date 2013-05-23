@@ -7,7 +7,7 @@ for update.  Should work on Ubuntu 13.04.
 Current Versions:
 -----------------
   * Mono 3.0.10
-  * MonoDevelop 4.0.4
+  * MonoDevelop 4.0.8
 
 Usage initial installation:
 ---------------------------
