@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 # debian/ubuntu packages to install for installation from source
 sudo apt-get -q -y install build-essential autoconf libtool mono-gmcs libglib2.0-dev libpango1.0-dev libatk1.0-dev libgtk2.0-dev libglade2-dev libart-2.0-dev libgnomevfs2-dev libgnome2-dev libgnomecanvas2-dev libgnomeui-dev libmono-addins-cil-dev libmono-addins-gui-cil-dev wget unzip
 
-XS_VERSION=4.1.10
+XS_VERSION=4.1.11
 XS_TAG=monodevelop-4.1.11
 MONO_VERSION=3.2.3
 MONO_TAG=mono-3.2.3
