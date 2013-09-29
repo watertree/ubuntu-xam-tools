@@ -23,12 +23,13 @@ mkdir -p $HOME/xamarin/monodevelop
 SOURCE_FILE=$HOME/xamarin/use-xs-mono
 echo "#!/bin/bash" > $SOURCE_FILE
 echo "MONO_PREFIX=\$HOME/xamarin/mono/current" >> $SOURCE_FILE
+echo "MD_PREFIX=\$HOME/xamarin/monodevelop/current" >> $SOURCE_FILE
 echo "GNOME_PREFIX=/usr" >> $SOURCE_FILE
 echo "export DYLD_LIBRARY_FALLBACK_PATH=\$MONO_PREFIX/lib:\$DYLD_LIBRARY_FALLBACK_PATH" >> $SOURCE_FILE
 echo "export LD_LIBRARY_PATH=\$MONO_PREFIX/lib:\$LD_LIBRARY_PATH" >> $SOURCE_FILE
 echo "export C_INCLUDE_PATH=\$MONO_PREFIX/include:\$GNOME_PREFIX/include" >> $SOURCE_FILE
 echo "export ACLOCAL_PATH=\$MONO_PREFIX/share/aclocal" >> $SOURCE_FILE
-echo "export PKG_CONFIG_PATH=\$MONO_PREFIX/lib/pkgconfig:\$GNOME_PREFIX/lib/pkgconfig" >> $SOURCE_FILE
+echo "export PKG_CONFIG_PATH=\$MONO_PREFIX/lib/pkgconfig:\$GNOME_PREFIX/lib/pkgconfig:\$MD_PREFIX/lib/pkgconfig" >> $SOURCE_FILE
 echo "export PATH=\$MONO_PREFIX/bin:\$PATH" >> $SOURCE_FILE
 echo "alias xs='nohup \$HOME/xamarin/monodevelop/current/bin/monodevelop > /dev/null 2>&1 &'" >> $SOURCE_FILE
 
