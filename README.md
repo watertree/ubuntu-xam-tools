@@ -2,12 +2,12 @@
 Scripts to build what is effectively the equivalent of the delightful and beautiful Xamarin Studio
 on Ubuntu.  It is designed to be continuously updated and applied as new versions of MonoDevelop
 and Mono are released.  Check the release immediately below to see if a new version is available
-for update.  Should work on Ubuntu 13.04.
+for update.  Should work on Ubuntu 13.04 (13.10 has an issue with the tabs not displaying file names)
 
 Current Versions:
 -----------------
   * Mono 3.2.4
-  * MonoDevelop 4.2.0.7
+  * MonoDevelop 4.2.1
 
 Usage initial installation:
 ---------------------------
