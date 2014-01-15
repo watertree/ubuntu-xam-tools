@@ -3,15 +3,15 @@ export DEBIAN_FRONTEND=noninteractive
 # debian/ubuntu packages to install for installation from source
 sudo apt-get -q -y install build-essential autoconf libtool mono-gmcs libglib2.0-dev libpango1.0-dev libatk1.0-dev libgtk2.0-dev libglade2-dev libart-2.0-dev libgnomevfs2-dev libgnome2-dev libgnomecanvas2-dev libgnomeui-dev libmono-addins-cil-dev libmono-addins-gui-cil-dev wget unzip
 
-XS_VERSION=4.3.0
-XS_TAG=monodevelop-4.3.0
+XS_VERSION=4.3.1
+XS_TAG=monodevelop-4.3.1
 MONO_VERSION=3.2.5
 MONO_TAG=mono-3.2.5
 GTK_SHARP_TAG=gtk-sharp-2-12-branch
 GNOME_SHARP_TAG=master
-FSHARP_TAG=3.0.31
-FSHARP_BINDING_VERSION=3.2.21
-FSHARP_BINDING_MPACK_URL=http://addins.monodevelop.com/Stable/Mac/4.2.1/MonoDevelop.FSharpBinding-3.2.21.mpack
+FSHARP_TAG=3.0.34
+FSHARP_BINDING_VERSION=3.2.22
+FSHARP_BINDING_MPACK_URL=http://addins.monodevelop.com/Stable/Mac/4.3.0/MonoDevelop.FSharpBinding-3.2.22.mpack
 XSP_TAG=3.0
 
 mkdir -p $HOME/xamarin/build/mono
@@ -38,7 +38,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 	rm -Rf $HOME/xamarin/build/mono/${MONO_VERSION}
 	mkdir -p $HOME/xamarin/build/mono/${MONO_VERSION}
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --progress  https://github.com/mono/mono.git
+	git clone --depth 1 --progress  https://github.com/mono/mono.git
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}/mono
 	git checkout $MONO_TAG
 	sed -i 's@git://github@https://github@' .gitmodules
@@ -52,7 +52,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build gtk-sharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --progress https://github.com/mono/gtk-sharp.git
+	git clone --depth 1 --progress https://github.com/mono/gtk-sharp.git
 	cd gtk-sharp
 	git checkout $GTK_SHARP_TAG
 	./bootstrap-2.12 --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -60,7 +60,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build gnome-sharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --progress https://github.com/mono/gnome-sharp.git
+	git clone --depth 1 --progress https://github.com/mono/gnome-sharp.git
 	cd gnome-sharp
 	git checkout $GNOME_SHARP_TAG 
 	./bootstrap-2.24 --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -68,7 +68,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build xsp4
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --progress https://github.com/mono/xsp.git
+	git clone --depth 1 --progress https://github.com/mono/xsp.git
 	cd xsp
 	git checkout $XSP_TAG
 	./autogen.sh --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -76,7 +76,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build fsharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --progress https://github.com/fsharp/fsharp.git
+	git clone --depth 1 --progress https://github.com/fsharp/fsharp.git
 	cd fsharp
 	git checkout $FSHARP_TAG 
 	./autogen.sh --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -91,7 +91,7 @@ if [ ! -d "$HOME/xamarin/monodevelop/${XS_VERSION}" ]; then
 	rm -Rf $HOME/xamarin/build/monodevelop/${XS_VERSION}
 	mkdir -p $HOME/xamarin/build/monodevelop/${XS_VERSION}
 	cd $HOME/xamarin/build/monodevelop/${XS_VERSION}
-	git clone --progress https://github.com/mono/monodevelop.git
+	git clone --depth 1 --progress https://github.com/mono/monodevelop.git
 	cd $HOME/xamarin/build/monodevelop/${XS_VERSION}/monodevelop
 	git checkout $XS_TAG
 	sed -i 's@git://github@https://github@' .gitmodules
