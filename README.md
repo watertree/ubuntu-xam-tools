@@ -6,7 +6,7 @@ for update.  Should work on Ubuntu 12.04 up to 13.04 (13.10 has an issue with th
 
 Current Versions:
 -----------------
-  * Mono 3.2.5
+  * Mono 3.2.6
   * MonoDevelop 4.3.1
 
 Usage initial installation:
