@@ -38,7 +38,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 	rm -Rf $HOME/xamarin/build/mono/${MONO_VERSION}
 	mkdir -p $HOME/xamarin/build/mono/${MONO_VERSION}
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --depth 1 --progress  https://github.com/mono/mono.git
+	git clone --progress  https://github.com/mono/mono.git
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}/mono
 	git checkout $MONO_TAG
 	sed -i 's@git://github@https://github@' .gitmodules
@@ -52,7 +52,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build gtk-sharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --depth 1 --progress https://github.com/mono/gtk-sharp.git
+	git clone --progress https://github.com/mono/gtk-sharp.git
 	cd gtk-sharp
 	git checkout $GTK_SHARP_TAG
 	./bootstrap-2.12 --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -60,7 +60,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build gnome-sharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --depth 1 --progress https://github.com/mono/gnome-sharp.git
+	git clone --progress https://github.com/mono/gnome-sharp.git
 	cd gnome-sharp
 	git checkout $GNOME_SHARP_TAG 
 	./bootstrap-2.24 --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -68,7 +68,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build xsp4
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --depth 1 --progress https://github.com/mono/xsp.git
+	git clone --progress https://github.com/mono/xsp.git
 	cd xsp
 	git checkout $XSP_TAG
 	./autogen.sh --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -76,7 +76,7 @@ if [ ! -d "$HOME/xamarin/mono/${MONO_VERSION}" ]; then
 
 	# checkout and build fsharp
 	cd $HOME/xamarin/build/mono/${MONO_VERSION}
-	git clone --depth 1 --progress https://github.com/fsharp/fsharp.git
+	git clone --progress https://github.com/fsharp/fsharp.git
 	cd fsharp
 	git checkout $FSHARP_TAG 
 	./autogen.sh --prefix=$HOME/xamarin/mono/${MONO_VERSION}
@@ -91,7 +91,7 @@ if [ ! -d "$HOME/xamarin/monodevelop/${XS_VERSION}" ]; then
 	rm -Rf $HOME/xamarin/build/monodevelop/${XS_VERSION}
 	mkdir -p $HOME/xamarin/build/monodevelop/${XS_VERSION}
 	cd $HOME/xamarin/build/monodevelop/${XS_VERSION}
-	git clone --depth 1 --progress https://github.com/mono/monodevelop.git
+	git clone --progress https://github.com/mono/monodevelop.git
 	cd $HOME/xamarin/build/monodevelop/${XS_VERSION}/monodevelop
 	git checkout $XS_TAG
 	sed -i 's@git://github@https://github@' .gitmodules
