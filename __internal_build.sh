@@ -1,7 +1,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # debian/ubuntu packages to install for installation from source
-sudo apt-get -q -y install build-essential autoconf libtool mono-gmcs libglib2.0-dev libpango1.0-dev libatk1.0-dev libgtk2.0-dev libglade2-dev libart-2.0-dev libgnomevfs2-dev libgnome2-dev libgnomecanvas2-dev libgnomeui-dev libmono-addins-cil-dev libmono-addins-gui-cil-dev wget unzip
+sudo apt-get -q -y install build-essential automake autoconf libtool mono-gmcs libglib2.0-dev libpango1.0-dev libatk1.0-dev libgtk2.0-dev libglade2-dev libart-2.0-dev libgnomevfs2-dev libgnome2-dev libgnomecanvas2-dev libgnomeui-dev libmono-addins-cil-dev libmono-addins-gui-cil-dev wget unzip
 
 XS_VERSION=4.3.1
 XS_TAG=monodevelop-4.3.1
@@ -106,10 +106,10 @@ if [ ! -d "$HOME/xamarin/monodevelop/${XS_VERSION}" ]; then
 	FS_BINDING_DIR=$HOME/.local/share/MonoDevelop-4.0/LocalInstall/Addins/MonoDevelop.FSharpBinding-${FSHARP_BINDING_VERSION}
 	rm -Rf $HOME/.local/share/MonoDevelop-4.0/LocalInstall/Addins/MonoDevelop.FSharpBinding*
 	mkdir $FS_BINDING_DIR
-	cd $FS_BINDING_DIR		
-	wget $FSHARP_BINDING_MPACK_URL
-	unzip MonoDevelop.FSharpBinding*.mpack
-	rm MonoDevelop.FSharpBinding*.mpack
+	#cd $FS_BINDING_DIR		
+	#wget $FSHARP_BINDING_MPACK_URL
+	#unzip MonoDevelop.FSharpBinding*.mpack
+	#rm MonoDevelop.FSharpBinding*.mpack
 
 	# link current monodevelop
 	rm -f $HOME/xamarin/monodevelop/current
